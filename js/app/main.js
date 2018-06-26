@@ -1,11 +1,12 @@
 var gs = gs || {};
 
 function onReady() {
+ gs.logoScrollResize();
  gs.stickyMenu();
 }
 
 function onResize() {
-
+    gs.stickyMenu();
 }
 
 function onScroll() {

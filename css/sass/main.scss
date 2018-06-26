@@ -5,7 +5,7 @@ $font-bold: 700;
 $primary-color: #000;
 $secondary-color: #c11f0a;
 $background-color: #FFF;
-$link-color: #b7e128;
+$link-color: #000;
 
 
 * {
@@ -39,7 +39,7 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 html, body {
-	height: 100%;
+	// height: 100%;
 	-ms-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%
 }
@@ -107,13 +107,6 @@ ul li {
     overflow: hidden;
     font-weight: $font-bold;
 }
-// .fixed {
-//     position: fixed;
-//     z-index: 100;
-//     display: block;
-//     top: 0;
-//     width: 100%;
-// }
 .txt-upper {
     text-transform: uppercase;
 }
@@ -137,6 +130,7 @@ ul li {
     position: fixed;
     top: 0;
     width: 100%;
+    z-index: 10;
 }
 #header ul li {
     padding: 0 2%;
@@ -148,21 +142,38 @@ ul li {
     max-width: 600px;
     margin: 0 auto;
 }
+/* --------------- CONTENT ------------------- */
+
 /* --------------- PRODUCTS ------------------- */
-.product {
+.home .product {
     width: 33.33%;
     float: left;
     clear: none;
 }
-.product-inner {
+.home .product-inner {
     margin: 20px 10px;
 }
-.product .product-image {
+.home .product-image {
     width: 100%;
     margin-bottom: 20px;
     height: 0;
     padding-bottom: 150%;
     background: pink;
+}
+.single-page .content{
+    position: relative;
+}
+.single-page .product-image {
+    width: 50%;
+    padding-bottom: 150%;
+    background: pink;
+}
+.single-page .product-content {
+    width: 50%;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    text-align: left;
 }
 
 /* --------------- FOOTER ------------------- */
@@ -193,6 +204,33 @@ footer #insta_logo {
     float: left;
     clear: none;
 }
+
+/* --------------- MEDIA QUIRIES ------------------- */
+@media screen and (max-width: 800px) {
+    .product {
+        width: 50%;
+    }
+    .footer-right, .footer-left{
+        width: 100%;
+        float: none;
+        text-align: center;
+    }
+    footer nav, footer #insta_logo{
+        float: none;
+        display: inline-block;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .product {
+        width: 100%;
+    }
+    .product .product-image {
+        padding-bottom: 100%;
+    }
+}
+
+
 /* --------------- FONTS ------------------- */
 @font-face {
     font-family: 'hk_groteskbold';

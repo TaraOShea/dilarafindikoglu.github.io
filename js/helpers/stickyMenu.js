@@ -1,24 +1,32 @@
-gs.logo = document.getElementById("logo");
-gs.logoW = gs.logo.offsetWidth;
-gs.stick = gs.logo.offsetHeight + gs.logo.offsetTop;
-gs.maxScrollDistance = gs.stick / 2; 
+//http://jsfiddle.net/woun56vk/203/
+gs.logoScrollResize = function(){
+    gs.logo = document.getElementById("logo");
+    gs.header = document.getElementById("header")
+    gs.logoW = gs.logo.offsetWidth;
+    gs.stick = gs.logo.offsetHeight + gs.logo.offsetTop;
+    gs.maxScrollDistance = gs.header.offsetHeight;
+    
+    gs.widthAtMax = 120;
+    gs.widthDiff = gs.logoW - gs.widthAtMax;
+    gs.pixelsPerScroll = (gs.widthDiff / gs.maxScrollDistance);
 
-gs.widthAtMax = 160;
-gs.widthDiff = gs.logoW - gs.widthAtMax;
-gs.pixelsPerScroll = (gs.widthDiff / gs.maxScrollDistance);
+}
+
 
 gs.stickyMenu = function() {
-    var header = document.getElementById("header").offsetHeight;
     var content = document.getElementById("content");
+    if(document.getElementsByClassName("home").length > 0){
+        var scrollTopPos = Math.min(window.pageYOffset, gs.maxScrollDistance);
+        var scrollChangePx =  Math.floor(scrollTopPos * gs.pixelsPerScroll);
+        var zoomedWidth = gs.logoW - scrollChangePx;
+        logo.style.maxWidth = zoomedWidth +"px";
 
-    var scrollTopPos = Math.min(window.pageYOffset, gs.maxScrollDistance);
-    var scrollChangePx =  Math.floor(scrollTopPos * gs.pixelsPerScroll);
-    var zoomedWidth = gs.logoW - scrollChangePx;
-    logo.style.width = zoomedWidth +"px";
-
-    if (window.pageYOffset >= gs.stick) {
-        console.log("above",window.pageYOffset);
+        if (window.pageYOffset <= gs.maxScrollDistance && (window.innerHeight + window.scrollY) <= (document.body.offsetHeight) - document.getElementById("footer").offsetHeight) {
+            content.style.paddingTop = gs.maxScrollDistance  - window.pageYOffset +"px";
+        } 
     } else {
-        content.style.marginTop = header - window.pageYOffset +"px";
-  }
+        console.log("hi");
+        logo.style.maxWidth = gs.widthAtMax +"px"; 
+        content.style.paddingTop = gs.header.offsetHeight +"px"; 
+    }
 }
