@@ -207,7 +207,7 @@ footer #insta_logo {
 
 /* --------------- MEDIA QUIRIES ------------------- */
 @media screen and (max-width: 800px) {
-    .product {
+    .home .product {
         width: 50%;
     }
     .footer-right, .footer-left{
@@ -222,10 +222,10 @@ footer #insta_logo {
 }
 
 @media screen and (max-width: 420px) {
-    .product {
+    .home .product {
         width: 100%;
     }
-    .product .product-image {
+    .home .product .product-image {
         padding-bottom: 100%;
     }
 }
