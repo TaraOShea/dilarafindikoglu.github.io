@@ -39,7 +39,6 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 html, body {
-	// height: 100%;
 	-ms-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%
 }
@@ -160,7 +159,6 @@ ul li {
     z-index: 20;
 }
 /* --------------- CONTENT ------------------- */
-
 /* --------------- PRODUCTS ------------------- */
 .home .product {
     width: 33.33%;
@@ -317,6 +315,15 @@ footer #insta_logo {
 
 /* --------------- MEDIA QUIRIES ------------------- */
 @media screen and (max-width: 920px) {
+    html, body.single-page  {
+        height: 100%;
+    }
+    
+    .single-page #content {
+        overflow: hidden;
+        min-height: calc(100% - 209px);
+        margin-bottom: -75px;
+    }
     .single-page .product-image {
         width: 100%;
     }
