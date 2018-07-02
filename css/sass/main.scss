@@ -171,6 +171,9 @@ ul li {
     padding-bottom: 150%;
     background: pink;
 }
+.home .product-image:nth-child(even){
+    background: red;
+}
 .single-page .content{
     position: relative;
 }
@@ -179,6 +182,9 @@ ul li {
     margin-bottom: 20px;
     padding-bottom: 80%;
     background: pink;
+}
+.single-page .product-image:nth-child(even){
+    background: red;
 }
 .single-page .product-content {
     width: 50%;
@@ -321,8 +327,7 @@ footer #insta_logo {
     .single-page .product-content .product-varients ul li:first-child {
         margin: 0 5px;
     }
-}
-@media screen and (max-width: 800px) {
+
     .home .product {
         width: 50%;
     }
@@ -337,7 +342,7 @@ footer #insta_logo {
     }
 }
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 620px) {
     .home .product {
         width: 100%;
     }

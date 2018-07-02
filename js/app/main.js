@@ -3,10 +3,12 @@ var gs = gs || {};
 function onReady() {
  gs.logoScrollResize();
  gs.stickyMenu();
+ gs.flick();
 }
 
 function onResize() {
     gs.stickyMenu();
+    gs.flick();
 }
 
 function onScroll() {
