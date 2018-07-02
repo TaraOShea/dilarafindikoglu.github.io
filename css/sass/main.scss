@@ -152,7 +152,13 @@ ul li {
 .single-page #logo-svg {
     margin-top: -130px;
 }
-
+.pointer {
+    position: fixed;
+    top: 30px;
+    left: 30px;
+    width: 110px;
+    z-index: 20;
+}
 /* --------------- CONTENT ------------------- */
 
 /* --------------- PRODUCTS ------------------- */
@@ -348,6 +354,12 @@ footer #insta_logo {
     }
     .home .product .product-image {
         padding-bottom: 100%;
+    }
+    .pointer {
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        width: 80px;
     }
 }
 
