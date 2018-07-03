@@ -7,6 +7,7 @@ function onReady() {
 }
 
 function onResize() {
+    gs.logoScrollResize();
     gs.stickyMenu();
     gs.flick();
 }

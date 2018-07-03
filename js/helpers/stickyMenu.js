@@ -1,5 +1,6 @@
 //http://jsfiddle.net/woun56vk/203/
 gs.logoScrollResize = function(){
+    gs.content = document.getElementById("content");
     gs.logo = document.getElementById("logo");
     gs.logotxt = document.getElementById("logo-text");
     gs.logosvg = document.getElementById("logo-svg");
@@ -12,11 +13,13 @@ gs.logoScrollResize = function(){
     gs.widthDiff = gs.logoW - gs.widthAtMax;
     gs.pixelsPerScroll = (gs.widthDiff / gs.maxScrollDistance);
 
+    if(document.body.scrollHeight < window.innerHeight){
+        gs.content.style.paddingTop = gs.header.offsetHeight +"px";  
+    }
 }
 
 
 gs.stickyMenu = function() {
-    var content = document.getElementById("content");
     if(document.getElementsByClassName("home").length > 0){
         var scrollTopPos = Math.min(window.pageYOffset, gs.maxScrollDistance);
         var scrollChangePx =  Math.floor(scrollTopPos * gs.pixelsPerScroll);
@@ -25,9 +28,8 @@ gs.stickyMenu = function() {
         // if(zoomedWidth >= gs.widthAtMax) {
             gs.logo.style.maxWidth = zoomedWidth +"px";
         // }
-
         if (window.pageYOffset <= gs.maxScrollDistance && (window.innerHeight + window.scrollY) <= (document.body.offsetHeight) - document.getElementById("footer").offsetHeight) {
-            content.style.paddingTop = (gs.maxScrollDistance*2)  - window.pageYOffset +"px";
+            gs.content.style.paddingTop = (gs.maxScrollDistance*2)  - window.pageYOffset +"px";
         }
 
         if(gs.logo.offsetWidth <= gs.widthAtMax + 10) {
@@ -39,6 +41,6 @@ gs.stickyMenu = function() {
         }
     } else {
         gs.logo.style.maxWidth = gs.widthAtMax +"px"; 
-        content.style.paddingTop = gs.header.offsetHeight +"px"; 
+        gs.content.style.paddingTop = gs.header.offsetHeight +"px"; 
     }
 }

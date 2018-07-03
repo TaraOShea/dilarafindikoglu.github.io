@@ -127,6 +127,10 @@ ul li {
 .pb60 {
     padding: 0 0 60px 0;
 }
+.announcement-bar {
+    text-align: center;
+    padding: 5px 10px;
+}
 /* --------------- HEADER ------------------- */
 #header {
     position: fixed;
@@ -172,11 +176,6 @@ ul li {
     width: 100%;
     margin-bottom: 20px;
     height: 0;
-    padding-bottom: 150%;
-    background: pink;
-}
-.home .product-image:nth-child(even){
-    background: red;
 }
 .single-page .content{
     position: relative;
@@ -185,10 +184,6 @@ ul li {
     width: 50%;
     margin-bottom: 20px;
     padding-bottom: 80%;
-    background: pink;
-}
-.single-page .product-image:nth-child(even){
-    background: red;
 }
 .single-page .product-content {
     width: 50%;
@@ -306,7 +301,7 @@ footer ul li {
     float: right;
     clear: none;
 }
-footer #insta_logo {
+footer .footer-logo {
     max-width: 20px;
     margin: 3px 0 0 10px;
     float: left;
@@ -349,7 +344,7 @@ footer #insta_logo {
         float: none;
         text-align: center;
     }
-    footer nav, footer #insta_logo{
+    footer nav, footer .footer-logo{
         float: none;
         display: inline-block;
     }
@@ -371,15 +366,15 @@ footer #insta_logo {
 }
 
 /* --------------- FONTS ------------------- */
-@font-face {
-    font-family: 'hk_groteskbold';
-    src: url('fonts/hkgrotesk-bold-webfont.eot');
-    src: url('fonts/hkgrotesk-bold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/hkgrotesk-bold-webfont.woff2') format('woff2'),
-         url('fonts/hkgrotesk-bold-webfont.woff') format('woff'),
-         url('fonts/hkgrotesk-bold-webfont.ttf') format('truetype'),
-         url('fonts/hkgrotesk-bold-webfont.svg#hk_groteskbold') format('svg');
-    font-weight: normal;
-    font-style: normal;
+// @font-face {
+//     font-family: 'hk_groteskbold';
+//     src: url('fonts/hkgrotesk-bold-webfont.eot');
+//     src: url('fonts/hkgrotesk-bold-webfont.eot?#iefix') format('embedded-opentype'),
+//          url('fonts/hkgrotesk-bold-webfont.woff2') format('woff2'),
+//          url('fonts/hkgrotesk-bold-webfont.woff') format('woff'),
+//          url('fonts/hkgrotesk-bold-webfont.ttf') format('truetype'),
+//          url('fonts/hkgrotesk-bold-webfont.svg#hk_groteskbold') format('svg');
+//     font-weight: normal;
+//     font-style: normal;
 
-}
+// }
