@@ -9,6 +9,7 @@ gs.flick = function() {
             gs.carousel.flickity();
             gs.flickEnabled = true;
         } else {
+            console.log("destroy");
             gs.carousel.flickity('destroy');
             gs.flickEnabled = false;
         }
