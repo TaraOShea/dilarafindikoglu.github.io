@@ -349,6 +349,14 @@ ul li {
     background: $background-color;   
     color: $primary-color;
 }
+/* --------- custom suits ---------------*/
+.input-hidden {
+  position: absolute;
+  left: -9999px;
+}
+.input-hidden:checked + label>img {
+    border: 5px solid $primary-color;
+}
 /* --------------- CART ------------------- */
 #shopify-section-cart-template {
     padding: 0 40px;
