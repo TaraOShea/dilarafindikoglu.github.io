@@ -1,9 +1,10 @@
 var gs = gs || {};
 
 function onReady() {
- gs.logoScrollResize();
- gs.stickyMenu();
- gs.flick();
+    gs.logoScrollResize();
+    gs.stickyMenu();
+    gs.flick();
+    gs.ScrollExecute();
 }
 
 function onResize() {
@@ -14,6 +15,7 @@ function onResize() {
 
 function onScroll() {
     gs.stickyMenu();
+  
 }
 
 $(document).ready(onReady);

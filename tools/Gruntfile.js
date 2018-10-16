@@ -3,7 +3,10 @@ module.exports = function(grunt) {
   // Configuration goes here
   grunt.initConfig({
       pkg: grunt.file.readJSON('package.json'),
-
+      resources: {
+        src_folder: '../',
+        shopify_folder: '../../store/dilarafindikoglu/',
+      }, 
       concat: {
         app: {
           src: ['../js/app/*.js'],
@@ -40,7 +43,15 @@ module.exports = function(grunt) {
           }
         }
       },
-
+      copy: {
+        shopify: {
+            files: [
+              {expand: true, cwd: '<%= resources.src_folder %>css/', src: ['main.min.css'], dest: '<%= resources.shopify_folder %>assets/'},
+              {expand: true, cwd: '<%= resources.src_folder %>js/', src: ['main.min.js'], dest: '<%= resources.shopify_folder %>assets/'},
+              {expand: true, cwd: '<%= resources.src_folder %>js/', src: ['helpers.min.js'], dest: '<%= resources.shopify_folder %>assets/'}
+            ],
+        }
+      }, 
       watch: {
         css: {
           files: '../css/sass/*.scss',
@@ -49,6 +60,10 @@ module.exports = function(grunt) {
         js: {
           files: ['../js/app/main.js', '../js/helpers/*.js'],
           tasks: ['concat', 'uglify']
+        }, 
+        copy: {
+          files: ['../css/*.min.css','../js/*.min.js'],
+          tasks: ['copy']
         }
       }
     });
@@ -57,8 +72,12 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-sass');
+    grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
   // Define your tasks here
   grunt.registerTask('default',['watch']);
+  grunt.registerTask('shopify', [
+    'copy:shopify',
+  ]);
 };

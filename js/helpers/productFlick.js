@@ -3,9 +3,11 @@ gs.flick = function() {
         gs.carousel = $('.product-images').flickity({
             cellSelector: '.product-image', 
             contain: true,
-            adaptiveHeight: true
+            adaptiveHeight: true, 
+            pageDots: false, 
+            dragThreshold: 20
         });
-        if($(window).width() <= 920) {
+        if($(window).width() <= 820) {
             gs.carousel.flickity();
             gs.flickEnabled = true;
         } else {
