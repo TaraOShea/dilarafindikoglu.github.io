@@ -20,7 +20,6 @@ gs.logoScrollResize = function(){
     }
     
 
-
     gs.widthDiff = gs.logoW - gs.widthAtMax;
     gs.pixelsPerScroll = (gs.widthDiff / gs.maxScrollDistance);
     
@@ -53,7 +52,8 @@ gs.stickyMenu = function() {
         
         if(gs.carousel && window.pageYOffset >= gs.carousel.offsetHeight - gs.heightAtMax) {
             gs.logo.style.maxWidth = gs.zoomedWidth +"px";
-            gs.logo.style.height = gs.zoomedHeight/2 +"px";
+            gs.logo.style.height = gs.zoomedHeight/2+"px";
+            document.getElementsByClassName('flickity-page-dots')[0].style.display = "none";
             gs.header.classList.add('alt');
         } else if (!gs.carousel && window.pageYOffset <= gs.maxScrollDistance && (window.innerHeight + window.scrollY) <= (document.body.offsetHeight) - document.getElementById("footer").offsetHeight) {
             gs.content.style.paddingTop = (gs.maxScrollDistance*2) - window.pageYOffset +"px";
@@ -62,7 +62,11 @@ gs.stickyMenu = function() {
         if(gs.logo.offsetWidth <= gs.widthAtMax + 10) {
             gs.header.style.paddingTop = "0";
             gs.header.style.backgroundColor = "#FFFFFF";
-            gs.logosvg.style.marginTop = "-60px";
+            if(gs.carousel){
+                gs.logosvg.style.marginTop = "-22px";
+            }else{
+                gs.logosvg.style.marginTop = "-60px";
+            }
             gs.logotxt.style.display = "none";
             gs.nav.style.paddingTop = "8px";
             gs.nav.style.paddingBottom = "3px";

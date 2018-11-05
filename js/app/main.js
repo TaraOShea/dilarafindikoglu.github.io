@@ -3,19 +3,19 @@ var gs = gs || {};
 function onReady() {
     gs.logoScrollResize();
     gs.stickyMenu();
+    gs.caroselflick();
     gs.flick();
     gs.ScrollExecute();
 }
 
 function onResize() {
-    // gs.logoScrollResize();
+    gs.logoScrollResize();
     gs.stickyMenu();
     gs.flick();
 }
 
 function onScroll() {
     gs.stickyMenu();
-  
 }
 
 $(document).ready(onReady);
