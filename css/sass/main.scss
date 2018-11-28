@@ -128,6 +128,8 @@ ul li {
 .padding-top {
     padding-top: 140px;
     min-height: calc(100vh - 140px - 46px);
+    min-height: -webkit-calc(100vh - 140px - 46px);
+    min-height: -moz-calc(100vh - 140px - 46px);
 }
 .blur-up {
     opacity: 0;
@@ -308,6 +310,8 @@ ul li {
     width: 100%;
     // height: 100%;
     height: calc(100vh - 75px);
+    height: -webkit-calc(100vh - 75px);
+    height: -moz-calc(100vh - 75px);
     position: relative;
     overflow: hidden;
     background: $secondary-color;
@@ -362,6 +366,8 @@ ul li {
     position: relative;
     max-width: 460px;
     height: calc(100vh - 75px);
+    height: -webkit-calc(100vh - 75px);
+    height: -moz-calc(100vh - 75px);
 }
 .template-index #header.carousel #logo svg {
     position: absolute;
@@ -1126,6 +1132,8 @@ footer .footer-logo {
         max-width: 220px;
     }
     #carousel {
+        height: -webkit-calc(85vh - 75px);
+        height: -moz-calc(85vh - 75px);
         height: calc(85vh - 75px);
     }
 }
