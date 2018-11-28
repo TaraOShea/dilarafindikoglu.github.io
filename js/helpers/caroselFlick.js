@@ -7,7 +7,8 @@ gs.caroselflick = function() {
             pageDots: true, 
             prevNextButtons: false,
             dragThreshold: 20,
-            setGallerySize: false
+            setGallerySize: false,
+            autoPlay: 5000 
         });
         gs.carouselFlty.flickity();
     }   
