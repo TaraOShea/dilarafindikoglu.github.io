@@ -306,7 +306,7 @@ ul li {
 /* ------ carousel --- */
 #carousel {
     width: 100%;
-    height: 100%;
+    // height: 100%;
     height: calc(100vh - 75px);
     position: relative;
     overflow: hidden;
@@ -323,6 +323,7 @@ ul li {
     height: 100%;
     background-size: contain;
     background-position: center;
+    // background-repeat: no-repeat;
 }
 #carousel .flickity-slider {
     height: 100%;
@@ -1120,7 +1121,14 @@ footer .footer-logo {
         margin: 0 5px;
     }
 }
-
+@media screen and (max-width: 740px) {
+    .template-index #header.carousel #logo {
+        max-width: 220px;
+    }
+    #carousel {
+        height: calc(85vh - 75px);
+    }
+}
 @media screen and (max-width: 520px) {
     .template-index #logo, .template-collection #logo {
         max-width: 280px;

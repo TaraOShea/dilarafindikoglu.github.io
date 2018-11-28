@@ -1,15 +1,23 @@
 //http://jsfiddle.net/woun56vk/203/
+
+gs.content = document.getElementById("content");
+gs.logo = document.getElementById("logo");
+gs.logotxt = document.getElementById("logo-text");
+gs.logosvg = document.getElementById("logo-svg");
+gs.header = document.getElementById("header");
+gs.nav = document.getElementById("main-nav");
+gs.carousel = document.getElementById("carousel");
+
 gs.logoScrollResize = function(){
-    gs.content = document.getElementById("content");
-    gs.logo = document.getElementById("logo");
-    gs.logotxt = document.getElementById("logo-text");
-    gs.logosvg = document.getElementById("logo-svg");
-    gs.header = document.getElementById("header");
-    gs.nav = document.getElementById("main-nav");
-    gs.carousel = document.getElementById("carousel");
-    
     gs.logoW = Math.floor(gs.logo.offsetWidth);
-    gs.logoH = window.innerHeight - 75;
+
+    if(gs.carousel && window.innerWidth > 740 ){ 
+        gs.logoH = window.innerHeight - 75;
+    } else {
+        gs.logoH = ((window.innerHeight/100)*85) - 75;
+  
+    }
+
     gs.heightAtMax = 150;
     gs.widthAtMax = 150;
 
@@ -18,7 +26,8 @@ gs.logoScrollResize = function(){
     } else {
         gs.maxScrollDistance = gs.header.offsetHeight/2;
     }
-    
+
+
 
     gs.widthDiff = gs.logoW - gs.widthAtMax;
     gs.pixelsPerScroll = (gs.widthDiff / gs.maxScrollDistance);
@@ -43,16 +52,14 @@ gs.stickyMenu = function() {
         gs.zoomedWidth = gs.logoW - gs.scrollChangePx;  
         gs.logo.style.maxWidth = gs.zoomedWidth +"px";
 
-        if(gs.carousel){
-            gs.heightscrollTopPos = Math.min(window.pageYOffset, gs.maxScrollDistance);
-            gs.heightScrollChangePx =  Math.floor(gs.heightscrollTopPos * gs.heightPixelsPerScroll);
-            gs.zoomedHeight = gs.logoH - gs.heightScrollChangePx;
-            gs.logo.style.height = gs.zoomedHeight +"px";
-            if(document.getElementsByClassName('flickity-page-dots').length > 0) {
-                document.getElementsByClassName('flickity-page-dots')[0].style.display = "block";
-            }
+        gs.heightscrollTopPos = Math.min(window.pageYOffset, gs.maxScrollDistance);
+        gs.heightScrollChangePx =  Math.floor(gs.heightscrollTopPos * gs.heightPixelsPerScroll);
+        gs.zoomedHeight = gs.logoH - gs.heightScrollChangePx;
+        gs.logo.style.height = gs.zoomedHeight +"px";
+        if(document.getElementsByClassName('flickity-page-dots').length > 0) {
+            document.getElementsByClassName('flickity-page-dots')[0].style.display = "block";
         }
-        
+    
         if(gs.carousel && window.pageYOffset >= gs.carousel.offsetHeight - gs.heightAtMax) {
             gs.logo.style.maxWidth = gs.zoomedWidth +"px";
             gs.logo.style.height = gs.zoomedHeight/2+"px";
