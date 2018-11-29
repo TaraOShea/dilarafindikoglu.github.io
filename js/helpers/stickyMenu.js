@@ -11,11 +11,12 @@ gs.carousel = document.getElementById("carousel");
 gs.logoScrollResize = function(){
     gs.logoW = Math.floor(gs.logo.offsetWidth);
 
-    if(gs.carousel && window.innerWidth > 740 ){ 
+    if(gs.carousel && document.documentElement.clientWidth > 740 ){ 
         gs.logoH = document.documentElement.clientHeight - 75;
+        gs.carousel.style.height = document.documentElement.clientHeight - 75+"px";
     } else {
         gs.logoH = ((document.documentElement.clientHeight/100)*85) - 75;
-  
+        gs.carousel.style.height = ((document.documentElement.clientHeight/100)*85) - 75+"px";
     }
 
     gs.heightAtMax = 150;
