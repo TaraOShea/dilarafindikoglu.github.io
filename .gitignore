@@ -1,1 +1,2 @@
-.vscode/*
+.vscode
+tools/node_modules
